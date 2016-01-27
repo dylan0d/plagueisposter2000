@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Plagueis Poster 2000</string>
+    <string name="edit_message">Darth who?</string>
+    <string name="edit_message2">Dark lord of the?</string>
+    <string name="button_send">Dew It</string>
+    <string name="action_settings">Settings</string>
+</resources>
