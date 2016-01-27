@@ -19,6 +19,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         TextView textView = new TextView(this);
+        textView.setTextIsSelectable(true);
         textView.setTextSize(20);
         String[] str = message.split("#", 6);
         textView.setText("Did you ever hear the Tragedy of Darth "+str[0]+" the "+str[1]+
