@@ -19,8 +19,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText part1 = (EditText) findViewById(R.id.edit_message1);
         EditText part2 = (EditText) findViewById(R.id.edit_message2);
+        EditText part3 = (EditText) findViewById(R.id.edit_message3);
+        EditText part4 = (EditText) findViewById(R.id.edit_message4);
+        EditText part5 = (EditText) findViewById(R.id.edit_message5);
+        EditText part6 = (EditText) findViewById(R.id.edit_message6);
         String message = part1.getText().toString();
         message += "#"+part2.getText().toString();
+        message += "#"+part3.getText().toString();
+        message += "#"+part4.getText().toString();
+        message += "#"+part5.getText().toString();
+        message += "#"+part6.getText().toString();
+
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }

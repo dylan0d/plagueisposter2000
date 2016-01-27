@@ -17,11 +17,39 @@
         android:layout_below="@+id/edit_message1"
         />
 
+    <EditText android:id="@+id/edit_message3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="It's a what legend?"
+        android:layout_below="@+id/edit_message2"
+        />
+
+    <EditText android:id="@+id/edit_message4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="He could use the what?"
+        android:layout_below="@+id/edit_message3"
+        />
+
+    <EditText android:id="@+id/edit_message5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="To create what?"
+        android:layout_below="@+id/edit_message4"
+        />
+
+    <EditText android:id="@+id/edit_message6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="He taught who everything he knew?"
+        android:layout_below="@+id/edit_message5"
+        />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_send"
-        android:layout_below="@+id/edit_message2"
+        android:layout_below="@+id/edit_message6"
         android:onClick="sendMessage" />
 
 
