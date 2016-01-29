@@ -21,13 +21,14 @@ public class DisplayMessageActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         textView.setTextIsSelectable(true);
         textView.setTextSize(20);
-        String[] str = message.split("#", 6);
+        String[] str = message.split("#", 8);
         textView.setText("Did you ever hear the Tragedy of Darth "+str[0]+" the "+str[1]+
                          "? I thought not. It's not a story the Jedi would tell you. It's a "+str[2]+" legend. "+
                          "Darth "+str[0]+" was a dark lord of the "+str[2]+" so powerful and so wise, he could use the "+str[3]+
-                         " to influence the midi-chlorians to create... "+str[4]+
+                         " to influence the midi-chlorians to create... "+str[4]+ "He had such a knowledge of the "+str[5]+
+                         ", he could even keep the ones he cared about...from "+str[6]+
                          ". He became so powerful, the only thing he was afraid of was losing his power... which, eventually of course, he did."+
-                         " Unfortunately, he taught "+str[5]+" everything he knew. Then "+str[5]+ " killed him in his sleep. Ironic." +
+                         " Unfortunately, he taught "+str[7]+" everything he knew. Then "+str[7]+ " killed him in his sleep. Ironic." +
                          " He could save others from death... but not himself.");
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);

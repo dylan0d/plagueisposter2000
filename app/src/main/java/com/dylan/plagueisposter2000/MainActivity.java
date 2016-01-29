@@ -17,18 +17,33 @@ public class MainActivity extends AppCompatActivity {
     }
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText part1 = (EditText) findViewById(R.id.edit_message1);
-        EditText part2 = (EditText) findViewById(R.id.edit_message2);
-        EditText part3 = (EditText) findViewById(R.id.edit_message3);
-        EditText part4 = (EditText) findViewById(R.id.edit_message4);
-        EditText part5 = (EditText) findViewById(R.id.edit_message5);
-        EditText part6 = (EditText) findViewById(R.id.edit_message6);
-        String message = part1.getText().toString();
-        message += "#"+part2.getText().toString();
-        message += "#"+part3.getText().toString();
-        message += "#"+part4.getText().toString();
-        message += "#"+part5.getText().toString();
-        message += "#"+part6.getText().toString();
+        EditText[] messages = new EditText[8];
+        messages[0] = (EditText) findViewById(R.id.edit_message1);
+        messages[1] = (EditText) findViewById(R.id.edit_message2);
+        messages[2] = (EditText) findViewById(R.id.edit_message3);
+        messages[3] = (EditText) findViewById(R.id.edit_message4);
+        messages[4] = (EditText) findViewById(R.id.edit_message5);
+        messages[5] = (EditText) findViewById(R.id.edit_message6);
+        messages[6] = (EditText) findViewById(R.id.edit_message7);
+        messages[7] = (EditText) findViewById(R.id.edit_message8);
+
+        String[] defaults = {"Plagueis", "wise", "Sith", "midi-chorians", "life", "Dark Side", "dying", "his apprentice"};
+        String message="";
+        for (int i=0; i<messages.length; i++)
+        {
+            if (i!=0)
+            {
+                message+="#";
+            }
+            if (messages[i].getText().toString().equals(""))
+            {
+                message+=defaults[i];
+            }
+            else
+            {
+                message+=messages[i].getText().toString();
+            }
+        }
 
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);

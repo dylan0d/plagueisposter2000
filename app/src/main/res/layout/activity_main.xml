@@ -41,15 +41,29 @@
     <EditText android:id="@+id/edit_message6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="He taught who everything he knew?"
+        android:hint="Such a knowedge of what?"
         android:layout_below="@+id/edit_message5"
+        />
+
+    <EditText android:id="@+id/edit_message7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Keep the ones he cared about from what?"
+        android:layout_below="@+id/edit_message6"
+        />
+
+    <EditText android:id="@+id/edit_message8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="He taught who everything he knew?"
+        android:layout_below="@+id/edit_message7"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_send"
-        android:layout_below="@+id/edit_message6"
+        android:layout_below="@+id/edit_message8"
         android:onClick="sendMessage" />
 
 
