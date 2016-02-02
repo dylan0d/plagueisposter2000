@@ -15,10 +15,14 @@ import com.dylan.plagueisposter2000.R;
 
 public class DisplayMessageActivity extends AppCompatActivity {
     private ShareActionProvider mShareActionProvider;
+    Intent mShareIntent = new Intent();
+    private String finishedPasta="";
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
+
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
@@ -26,15 +30,19 @@ public class DisplayMessageActivity extends AppCompatActivity {
         textView.setTextIsSelectable(true);
         textView.setTextSize(20);
         String[] str = message.split("#", 8);
-        textView.setText("Did you ever hear the Tragedy of Darth "+str[0]+" the "+str[1]+
+        finishedPasta="Did you ever hear the Tragedy of Darth "+str[0]+" the "+str[1]+
                          "? I thought not. It's not a story the Jedi would tell you. It's a "+str[2]+" legend. "+
                          "Darth "+str[0]+" was a dark lord of the "+str[2]+" so powerful and so wise, he could use the "+str[3]+
-                         " to influence the midi-chlorians to create... "+str[4]+ "He had such a knowledge of the "+str[5]+
+                         " to influence the midi-chlorians to create... "+str[4]+ ". He had such a knowledge of the "+str[5]+
                          ", he could even keep the ones he cared about...from "+str[6]+
                          ". He became so powerful, the only thing he was afraid of was losing his power... which, eventually of course, he did."+
                          " Unfortunately, he taught "+str[7]+" everything he knew. Then "+str[7]+ " killed him in his sleep. Ironic." +
-                         " He could save others from death... but not himself.");
+                         " He could save others from death... but not himself.";
 
+        textView.setText(finishedPasta);
+        mShareIntent.setAction(Intent.ACTION_SEND);
+        mShareIntent.setType("text/plain");
+        mShareIntent.putExtra(Intent.EXTRA_TEXT, finishedPasta);
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
         layout.addView(textView);
     }
@@ -42,28 +50,19 @@ public class DisplayMessageActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate menu resource file.
-        getMenuInflater().inflate(R.menu.share_menu, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         // Locate MenuItem with ShareActionProvider
         MenuItem item = menu.findItem(R.id.menu_item_share);
         // Fetch and store ShareActionProvider
         mShareActionProvider = (ShareActionProvider)  MenuItemCompat.getActionProvider(item);
-        setShareIntent(createShareIntent());
+        if (mShareActionProvider != null) {
+            mShareActionProvider.setShareIntent(mShareIntent);
+        }
         // Return true to display menu
         return true;
     }
-    // Call to update the share intent
-    private void setShareIntent(Intent shareIntent) {
-        if (mShareActionProvider != null) {
-            mShareActionProvider.setShareIntent(shareIntent);
-        }
-    }
-    private Intent createShareIntent() {
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT,
-                "http://stackandroid.com");
-        return shareIntent;
-    }
+
+
 }
 
 /*Palpatine: Did you ever hear the Tragedy of Darth PLAGUEIS the WISE?
