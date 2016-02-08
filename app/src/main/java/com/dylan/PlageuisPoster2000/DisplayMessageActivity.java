@@ -37,7 +37,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
                          ", he could even keep the ones he cared about...from "+str[6]+
                          ". He became so powerful, the only thing he was afraid of was losing his power... which, eventually of course, he did."+
                          " Unfortunately, he taught "+str[7]+" everything he knew. Then "+str[7]+ " killed him in his sleep. Ironic." +
-                         " He could save others from death... but not himself.";
+                         " He could save others from "+str[6]+"... but not himself.";
 
         textView.setText(finishedPasta);
         mShareIntent.setAction(Intent.ACTION_SEND);
